@@ -1,6 +1,6 @@
 {
-  "name": "@designers/integrations",
-  "version": "0.1.0",
+  "name": "designers-integrations",
+  "version": "2.0.1",
   "description": "UI library integrations for Designers design system",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -51,11 +51,14 @@
     "mantine",
     "design-system"
   ],
-  "author": "Your Name",
+  "author": "arkit karmokar",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@designers/core": "0.1.0",
-    "@designers/react": "0.1.0"
+    "designers-core": "2.0.1",
+    "designers-react": "2.0.1"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

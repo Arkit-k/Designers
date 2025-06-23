@@ -1,6 +1,6 @@
 {
-  "name": "@designers/react",
-  "version": "0.1.0",
+  "name": "designers-react",
+  "version": "3.0.0",
   "description": "React hooks and providers for Designers design system",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -29,10 +29,13 @@
     "responsive",
     "theming"
   ],
-  "author": "Your Name",
+  "author": "arkit karmokar",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@designers/core": "0.1.0"
+    "designers-core": "3.0.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0"

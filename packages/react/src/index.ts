@@ -10,15 +10,28 @@
  */
 
 // Provider exports
-export { 
-  DesignSystemProvider, 
-  useDesignSystemContext 
+export {
+  DesignSystemProvider,
+  useDesignSystemContext
 } from './providers/DesignSystemProvider';
-export type { 
-  DesignSystemConfig, 
-  DesignSystemContextValue, 
-  DesignSystemProviderProps 
+export type {
+  DesignSystemConfig,
+  DesignSystemContextValue,
+  DesignSystemProviderProps
 } from './providers/DesignSystemProvider';
+
+// Theme Mode Provider exports
+export {
+  ThemeModeProvider,
+  useThemeMode,
+  injectThemeTransitionCSS
+} from './providers/ThemeModeProvider';
+export type {
+  ThemeMode,
+  ThemeModeConfig,
+  ThemeModeContextValue,
+  ThemeModeProviderProps
+} from './providers/ThemeModeProvider';
 
 // Design tokens hooks
 export { 
@@ -60,6 +73,15 @@ export type {
   ColorSchemeState, 
   ColorSchemeUtilities 
 } from './hooks/useColorScheme';
+
+// Component exports
+export {
+  ThemeModeSelector
+} from './components';
+export type {
+  ThemeModeSelectorProps,
+  ThemeOption
+} from './components';
 
 // Re-export core types for convenience
 export type {

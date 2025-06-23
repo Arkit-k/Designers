@@ -6,7 +6,8 @@ A lightweight, headless design system for React applications that provides struc
 
 - **🎨 Comprehensive Design Tokens**: Colors, typography, spacing, shadows, effects, and animations
 - **📱 Responsive by Default**: Mobile-first breakpoints with automatic detection
-- **🌙 Dark Mode Support**: Automatic system theme detection and seamless switching
+- **🌙 Advanced Theme Modes**: Light, Dark, Midnight (SaaS-style), and System modes with seamless switching
+- **🌌 Premium Effects**: Glass morphism, floating orbs, and glow effects in Midnight mode
 - **⚡ Performance Focused**: Tree-shakeable, minimal runtime overhead, optimized for production
 - **🔧 TypeScript Native**: Full type safety, IntelliSense support, and auto-completion
 - **🎯 Framework Agnostic**: Works with any UI library (shadcn, MUI, Chakra, Mantine) or custom components
@@ -290,12 +291,118 @@ function TailwindExample() {
 }
 ```
 
-### Theme Management
+### Advanced Theme Modes
+
+Designers now supports four distinct theme modes with premium visual effects:
+
+```tsx
+import { ThemeModeProvider, useThemeMode, ThemeModeSelector } from '@designers/react';
+
+function App() {
+  return (
+    <ThemeModeProvider
+      config={{
+        defaultMode: 'midnight',
+        enableSystemDetection: true,
+        enableTransitions: true,
+        transitionDuration: 300,
+      }}
+    >
+      <YourApp />
+    </ThemeModeProvider>
+  );
+}
+
+function ThemeControls() {
+  const { themeMode, setThemeMode, resolvedTheme } = useThemeMode();
+
+  return (
+    <div>
+      <p>Current mode: {themeMode}</p>
+      <p>Resolved theme: {resolvedTheme}</p>
+
+      {/* Pre-built theme selector component */}
+      <ThemeModeSelector
+        variant="dropdown"
+        showLabels={true}
+        showDescriptions={true}
+        showPreviews={true}
+      />
+
+      {/* Manual theme switching */}
+      <button onClick={() => setThemeMode('light')}>Light Mode</button>
+      <button onClick={() => setThemeMode('dark')}>Dark Mode</button>
+      <button onClick={() => setThemeMode('midnight')}>Midnight Mode</button>
+      <button onClick={() => setThemeMode('system')}>System Mode</button>
+    </div>
+  );
+}
+```
+
+#### Available Theme Modes
+
+1. **🌞 Light Mode**
+   - Clean, bright interface
+   - High contrast for readability
+   - Professional appearance
+   - Perfect for daytime use
+
+2. **🌙 Dark Mode**
+   - Traditional dark theme
+   - Easy on the eyes
+   - Reduced blue light
+   - Modern aesthetic
+
+3. **🌌 Midnight Mode** (Premium SaaS-style)
+   - Deep black backgrounds
+   - Vibrant blue accents
+   - Floating animated orbs
+   - Glass morphism effects
+   - Glow effects on interactive elements
+   - Premium visual experience
+
+4. **💻 System Mode**
+   - Automatically follows OS preference
+   - Seamless switching
+   - Respects user's system settings
+
+#### Theme Mode Selector Component
+
+```tsx
+import { ThemeModeSelector } from '@designers/react';
+
+// Dropdown variant (default)
+<ThemeModeSelector
+  variant="dropdown"
+  showLabels={true}
+  showDescriptions={true}
+  showPreviews={true}
+  size="md"
+/>
+
+// Button group variant
+<ThemeModeSelector
+  variant="buttons"
+  showLabels={false}
+  size="sm"
+/>
+
+// Tab variant
+<ThemeModeSelector
+  variant="tabs"
+  showLabels={true}
+  size="lg"
+/>
+```
+
+### Legacy Theme Management
+
+For backward compatibility, the original theme management is still available:
 
 ```tsx
 import { useColorScheme } from '@designers/react';
 
-function ThemeControls() {
+function LegacyThemeControls() {
   const {
     theme,           // 'light' | 'dark' | 'auto'
     resolvedTheme,   // 'light' | 'dark' (actual theme being used)

@@ -1,45 +1,62 @@
 /**
- * @designers/core - Core design tokens and utilities
- * 
- * A comprehensive design token system providing:
- * - Color system with light/dark mode support
- * - Typography with fluid scaling
- * - Consistent spacing system
- * - Responsive breakpoints
- * - Visual effects (shadows, gradients, etc.)
- * - Utility functions for token manipulation
+ * 🎨 Designers - Zero-config design tokens that just work
+ *
+ * The design system developers actually want to use:
+ * ✨ Zero configuration - works out of the box
+ * 🔥 Full TypeScript support with autocomplete
+ * 🎯 Framework agnostic - works with any CSS solution
+ * 🚀 Tiny bundle size - only what you use
+ * 🔄 Hot reload support in development
  */
 
-// Export all design tokens
-export * from './tokens';
+// Core design system - everything you need
+export { ds } from './design-system';
 
-// Export utilities
-export * from './utils/token-utils';
+// Individual token exports for tree-shaking
+export { colors } from './tokens/colors';
+export { spacing } from './tokens/spacing';
+export { typography } from './tokens/typography';
+export { breakpoints } from './tokens/breakpoints';
+export { shadows, radius, transitions } from './tokens/effects';
+
+// Utilities that developers actually use
+export {
+  createTheme,
+  extendTheme,
+  generateCSS,
+  generateTailwindConfig,
+  responsiveValue,
+  colorMix,
+  spacingScale
+} from './utils';
+
+// Theme mode utilities
+export {
+  generateThemeModeCSS,
+  generateAllThemeModesCSS,
+  getThemeModeConfig,
+  supportsEffect,
+  generateThemeAwareCSS,
+  injectThemeModeCSS,
+  themeModeConfigs
+} from './theme-modes';
+
+// Types for TypeScript users
+export type {
+  Theme,
+  ColorScale,
+  SpacingScale,
+  TypographyScale,
+  ResponsiveValue,
+  DesignTokens,
+  ThemeConfig
+} from './types';
+
+// Theme mode types
+export type {
+  ThemeMode,
+  ThemeModeConfig
+} from './theme-modes';
 
 // Version
-export const version = '0.1.0';
-
-// Default theme configuration
-export const defaultConfig = {
-  theme: 'light' as const,
-  breakpoint: 'md' as const,
-  prefix: 'designers',
-};
-
-// Re-export commonly used types for convenience
-export type {
-  ColorTheme,
-  BreakpointKey,
-  ResponsiveValue,
-  SpacingKey,
-  ShadowKey,
-  BorderRadiusKey,
-  TypographyScale,
-} from './tokens';
-
-// Main design system object for easy access
-export { colorThemes as themes } from './tokens/colors';
-export { typography } from './tokens/typography';
-export { spacing } from './tokens/spacing';
-export { breakpoints } from './tokens/breakpoints';
-export { shadows, gradients, borderRadius, opacity } from './tokens/effects';
+export const version = '1.0.0';

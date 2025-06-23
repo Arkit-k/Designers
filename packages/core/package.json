@@ -1,6 +1,6 @@
 {
-  "name": "@designers/core",
-  "version": "0.1.0",
+  "name": "designers-core",
+  "version": "3.0.0",
   "description": "Core design tokens and utilities for Designers design system",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -34,8 +34,11 @@
     "css-variables",
     "theming"
   ],
-  "author": "Your Name",
+  "author": "arkit karmokar",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/node": "^20.10.5",
     "eslint": "^8.56.0",
