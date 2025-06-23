@@ -1,0 +1,70 @@
+{
+  "name": "@designers/animations",
+  "version": "0.1.0",
+  "description": "Animation primitives and utilities for Designers design system",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./framer": {
+      "types": "./dist/framer.d.ts",
+      "import": "./dist/framer.esm.js",
+      "require": "./dist/framer.js"
+    },
+    "./gsap": {
+      "types": "./dist/gsap.d.ts",
+      "import": "./dist/gsap.esm.js",
+      "require": "./dist/gsap.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "animation",
+    "framer-motion",
+    "gsap",
+    "react",
+    "design-system"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@designers/core": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "framer-motion": ">=10.0.0",
+    "gsap": ">=3.12.0"
+  },
+  "peerDependenciesMeta": {
+    "framer-motion": {
+      "optional": true
+    },
+    "gsap": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "framer-motion": "^10.16.16",
+    "gsap": "^3.12.2",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "@designers/integrations",
+  "version": "0.1.0",
+  "description": "UI library integrations for Designers design system",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./shadcn": {
+      "import": "./dist/shadcn.esm.js",
+      "require": "./dist/shadcn.js",
+      "types": "./dist/shadcn.d.ts"
+    },
+    "./mui": {
+      "import": "./dist/mui.esm.js",
+      "require": "./dist/mui.js",
+      "types": "./dist/mui.d.ts"
+    },
+    "./chakra": {
+      "import": "./dist/chakra.esm.js",
+      "require": "./dist/chakra.js",
+      "types": "./dist/chakra.d.ts"
+    },
+    "./mantine": {
+      "import": "./dist/mantine.esm.js",
+      "require": "./dist/mantine.js",
+      "types": "./dist/mantine.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ui-library",
+    "integration",
+    "shadcn",
+    "mui",
+    "chakra-ui",
+    "mantine",
+    "design-system"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@designers/core": "0.1.0",
+    "@designers/react": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "@radix-ui/react-slot": "^1.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0",
+    "@mui/material": ">=5.0.0",
+    "@emotion/react": ">=11.0.0",
+    "@emotion/styled": ">=11.0.0",
+    "@chakra-ui/react": ">=2.0.0",
+    "@mantine/core": ">=7.0.0",
+    "@mantine/hooks": ">=7.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@radix-ui/react-slot": {
+      "optional": true
+    },
+    "class-variance-authority": {
+      "optional": true
+    },
+    "clsx": {
+      "optional": true
+    },
+    "tailwind-merge": {
+      "optional": true
+    },
+    "@mui/material": {
+      "optional": true
+    },
+    "@emotion/react": {
+      "optional": true
+    },
+    "@emotion/styled": {
+      "optional": true
+    },
+    "@chakra-ui/react": {
+      "optional": true
+    },
+    "@mantine/core": {
+      "optional": true
+    },
+    "@mantine/hooks": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
