@@ -11,13 +11,15 @@ interface CodeBlockProps {
   language: string
   title?: string
   showLineNumbers?: boolean
+  className?: string
 }
 
-export function CodeBlock({ 
-  code, 
-  language, 
-  title, 
-  showLineNumbers = false 
+export function CodeBlock({
+  code,
+  language,
+  title,
+  showLineNumbers = false,
+  className = ''
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
 
@@ -32,7 +34,7 @@ export function CodeBlock({
   }
 
   return (
-    <div className="relative group">
+    <div className={`relative group ${className}`}>
       <div className="rounded-lg border border-border bg-card overflow-hidden">
         {title && (
           <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted/50">

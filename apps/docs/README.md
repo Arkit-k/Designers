@@ -5,7 +5,8 @@ This is the official documentation site for the Designers design system, built w
 ## Features
 
 - 🎨 **Beautiful Design** - Modern, clean interface inspired by the best documentation sites
-- 🌙 **Dark Mode** - Automatic theme switching with system preference detection
+- 🌙 **Advanced Theme Modes** - Light, Dark, Midnight (SaaS-style), and System modes with seamless switching
+- 🌌 **Premium Effects** - Glass morphism, floating orbs, and glow effects in Midnight mode
 - 📱 **Responsive** - Fully responsive design that works on all devices
 - ⚡ **Fast** - Built with Next.js 14 and optimized for performance
 - 🎭 **Animations** - Smooth animations powered by Framer Motion

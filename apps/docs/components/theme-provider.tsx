@@ -4,7 +4,7 @@ import * as React from 'react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { type ThemeProviderProps } from 'next-themes/dist/types'
 
-type ThemeMode = 'light' | 'dark' | 'midnight' | 'system'
+export type ThemeMode = 'light' | 'dark' | 'midnight' | 'system'
 
 interface ThemeModeContextType {
   themeMode: ThemeMode
@@ -21,7 +21,7 @@ export function useThemeMode() {
   return context
 }
 
-function ThemeModeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeModeProvider({ children }: { children: React.ReactNode }) {
   const [themeMode, setThemeMode] = React.useState<ThemeMode>('midnight')
 
   React.useEffect(() => {
@@ -54,11 +54,5 @@ function ThemeModeProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return (
-    <NextThemesProvider {...props}>
-      <ThemeModeProvider>
-        {children}
-      </ThemeModeProvider>
-    </NextThemesProvider>
-  )
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

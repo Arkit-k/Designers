@@ -148,8 +148,8 @@ function Button({ children, onClick, disabled }) {
                 transition: 'all 0.2s',
                 transform: clicked ? 'scale(0.95)' : 'scale(1)'
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#2563eb'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#3b82f6'}
+              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#2563eb'}
+              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#3b82f6'}
             >
               Primary Button
             </button>
@@ -164,8 +164,8 @@ function Button({ children, onClick, disabled }) {
                 cursor: 'pointer',
                 transition: 'all 0.2s'
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#f9fafb'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f9fafb'}
+              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = 'white'}
             >
               Secondary
             </button>

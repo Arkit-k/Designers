@@ -1,18 +1,27 @@
 {
-  "name": "docs",
-  "version": "0.1.0",
+  "name": "designers-docs",
+  "version": "1.0.0",
   "private": true,
+  "description": "Documentation site for Designers - Advanced theme mode design system",
+  "homepage": "https://designers-docs.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arkit-k/Designers.git",
+    "directory": "apps/docs"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.16",
     "clsx": "^2.0.0",
-    "designers": "^3.0.1",
+    "designers": "^3.1.0",
     "framer-motion": "^10.16.16",
     "lucide-react": "^0.294.0",
     "next": "14.0.4",
