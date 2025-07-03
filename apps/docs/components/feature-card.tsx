@@ -4,15 +4,38 @@ import { motion } from 'framer-motion'
 import { LucideIcon } from 'lucide-react'
 import { ReactNode } from 'react'
 
+
+import Palette from 'lucide-react/dist/esm/icons/palette'
+import Type from 'lucide-react/dist/esm/icons/type'
+import Layers from 'lucide-react/dist/esm/icons/layers'
+import Zap from 'lucide-react/dist/esm/icons/zap'
+import Sparkles from 'lucide-react/dist/esm/icons/sparkles'
+import Package from 'lucide-react/dist/esm/icons/package'
+import Settings from 'lucide-react/dist/esm/icons/settings'
+import Code from 'lucide-react/dist/esm/icons/code'
+
 interface FeatureCardProps {
-  icon: LucideIcon
+  iconName: string
   title: string
   description: string
   children?: ReactNode
   className?: string
 }
 
-export function FeatureCard({ icon: Icon, title, description, children, className = '' }: FeatureCardProps) {
+
+const iconMap: Record<string, LucideIcon> = {
+  Palette,
+  Type,
+  Layers,
+  Zap,
+  Sparkles,
+  Package,
+  Settings,
+  Code,
+}
+
+export function FeatureCard({ iconName, title, description, children, className = '' }: FeatureCardProps) {
+  const Icon = iconMap[iconName] || Palette;
   return (
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}

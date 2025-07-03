@@ -16,76 +16,44 @@ const sizeClasses = {
   xl: 'h-16 w-16'
 }
 
+
 export function Logo({ className, size = 'md', animated = true }: LogoProps) {
   const logoContent = (
     <div className={cn(
       'relative rounded-2xl overflow-hidden shadow-lg',
-      sizeClasses[size],
+      size === 'sm' ? 'h-6 w-6' : size === 'md' ? 'h-8 w-8' : size === 'lg' ? 'h-12 w-12' : 'h-16 w-16',
       className
     )}>
       {/* Gradient background */}
       <div className="absolute inset-0 logo-gradient dark:logo-gradient-dark" />
-      
       {/* Glass overlay effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-      
-      {/* Winking face */}
-      <div className="relative h-full w-full flex items-center justify-center">
-        {/* Left eye (dot) */}
-        <div className="absolute left-1/4 top-1/3 w-1 h-1 bg-gray-900 dark:bg-gray-100 rounded-full transform -translate-x-1/2 -translate-y-1/2" 
-             style={{ 
-               width: size === 'sm' ? '2px' : size === 'md' ? '3px' : size === 'lg' ? '4px' : '5px',
-               height: size === 'sm' ? '2px' : size === 'md' ? '3px' : size === 'lg' ? '4px' : '5px'
-             }} />
-        
-        {/* Right eye (wink) */}
-        <div className="absolute right-1/4 top-1/3 transform translate-x-1/2 -translate-y-1/2">
-          <div className="w-2 h-0.5 bg-gray-900 dark:bg-gray-100 rounded-full transform rotate-12"
-               style={{ 
-                 width: size === 'sm' ? '4px' : size === 'md' ? '6px' : size === 'lg' ? '8px' : '10px',
-                 height: size === 'sm' ? '1px' : size === 'md' ? '1.5px' : size === 'lg' ? '2px' : '2.5px'
-               }} />
-        </div>
-        
-        {/* Smile */}
-        <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-          <div className="w-3 h-1.5 border-b-2 border-gray-900 dark:border-gray-100 rounded-full"
-               style={{ 
-                 width: size === 'sm' ? '8px' : size === 'md' ? '12px' : size === 'lg' ? '16px' : '20px',
-                 height: size === 'sm' ? '4px' : size === 'md' ? '6px' : size === 'lg' ? '8px' : '10px',
-                 borderBottomWidth: size === 'sm' ? '1px' : size === 'md' ? '1.5px' : '2px'
-               }} />
-        </div>
-      </div>
-      
-      {/* Shine effect */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1 left-1 w-1 h-1 bg-white/60 rounded-full"
-             style={{ 
-               width: size === 'sm' ? '2px' : size === 'md' ? '3px' : size === 'lg' ? '4px' : '5px',
-               height: size === 'sm' ? '2px' : size === 'md' ? '3px' : size === 'lg' ? '4px' : '5px'
-             }} />
-      </div>
+      {/* Cat face (previous logo) */}
+      <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
+        <ellipse cx="256" cy="320" rx="180" ry="160" fill="#111" filter="url(#shadow)" />
+        <ellipse cx="180" cy="240" rx="32" ry="32" fill="#fff" />
+        <ellipse cx="332" cy="240" rx="32" ry="32" fill="#fff" />
+        <path d="M80 160 Q120 80 200 120" stroke="#111" strokeWidth="40" strokeLinecap="round" />
+        <path d="M432 160 Q392 80 312 120" stroke="#111" strokeWidth="40" strokeLinecap="round" />
+        <defs>
+          <filter id="shadow" x="0" y="0" width="512" height="512">
+            <feDropShadow dx="0" dy="0" stdDeviation="32" flood-color="#000" flood-opacity="0.5" />
+            <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#00f0ff" flood-opacity="0.2" />
+          </filter>
+        </defs>
+      </svg>
     </div>
-  )
-
-  if (!animated) {
-    return logoContent
-  }
-
+  );
+  if (!animated) return logoContent;
   return (
     <motion.div
-      whileHover={{ 
-        scale: 1.05,
-        rotate: [0, -5, 5, 0],
-        transition: { duration: 0.3 }
-      }}
+      whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0], transition: { duration: 0.3 } }}
       whileTap={{ scale: 0.95 }}
       className="cursor-pointer"
     >
       {logoContent}
     </motion.div>
-  )
+  );
 }
 
 // Text logo variant

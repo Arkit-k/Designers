@@ -5,15 +5,6 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
-  async redirects() {
-    return [
-      {
-        source: '/playground',
-        destination: '/docs',
-        permanent: false,
-      },
-    ]
-  },
 }
 
 module.exports = nextConfig

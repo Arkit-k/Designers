@@ -14,6 +14,7 @@ import {
   Package
 } from 'lucide-react'
 import { LogoWithText } from './logo'
+import { GithubStars } from './github-stars'
 import { ThemeModeSelector } from './theme-mode-selector'
 
 const navigation = [
@@ -56,10 +57,13 @@ export function Navigation() {
           {/* GitHub link */}
           <Link
             href="https://github.com/Arkit-k/Designers"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md glass text-sm font-medium transition-all duration-300 hover:scale-105 focus-ring"
+            className="inline-flex h-9 items-center justify-center rounded-md glass text-sm font-medium transition-all duration-300 hover:scale-105 focus-ring px-2"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Github className="h-4 w-4" />
             <span className="sr-only">GitHub</span>
+            <GithubStars repo="Arkit-k/Designers" />
           </Link>
 
           {/* npm link */}
