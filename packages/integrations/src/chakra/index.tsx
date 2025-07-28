@@ -6,7 +6,11 @@ import React from 'react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { Button, Box, Input, Badge, Alert, Avatar } from '@chakra-ui/react';
 import type { ComponentDefinition, UILibraryAdapter } from '../types';
+<<<<<<< HEAD
 import { useDesignTokens } from 'designers-react';
+=======
+import { useDesignTokens } from '@designers/react';
+>>>>>>> 9bd872856b02538a7e95ab9d5ef18ca582331b2c
 
 // Chakra Theme Generator
 export function createChakraTheme(designTokens: any) {

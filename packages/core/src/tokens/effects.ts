@@ -233,6 +233,7 @@ export const durations = {
   slowest: '1000ms',
 } as const;
 
+<<<<<<< HEAD
 // Transitions system (combining durations and easings)
 export const transitions = {
   duration: durations,
@@ -248,6 +249,8 @@ export const transitions = {
 // Export radius as an alias for borderRadius for backward compatibility
 export const radius = borderRadius;
 
+=======
+>>>>>>> 9bd872856b02538a7e95ab9d5ef18ca582331b2c
 // Utility functions
 export function getShadow(size: keyof ShadowSystem): string {
   return shadows[size];
