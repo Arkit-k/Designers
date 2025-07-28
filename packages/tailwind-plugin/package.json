@@ -1,0 +1,41 @@
+{
+  "name": "designers-tailwind-plugin",
+  "version": "2.0.1",
+  "description": "Tailwind CSS plugin for Designers design system",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "tailwindcss",
+    "plugin",
+    "design-system",
+    "designers"
+  ],
+  "author": "arkit karmokar",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "designers-core": "2.0.1"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

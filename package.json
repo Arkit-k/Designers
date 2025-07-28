@@ -1,0 +1,49 @@
+{
+  "name": "designers",
+  "version": "0.1.0",
+  "description": "A lightweight, headless design system for React applications",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "type-check": "turbo run type-check",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=./packages/* && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "npm@10.2.4",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arkit-k/Designers.git"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "headless",
+    "design-tokens",
+    "ui",
+    "components"
+  ],
+  "author": "arkit karmokar",
+  "license": "MIT"
+}

@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "name": "designers-docs",
+  "framework": "nextjs",
+  "buildCommand": "turbo run build --filter=designers-docs",
+  "devCommand": "turbo run dev --filter=designers-docs",
+  "installCommand": "npm install",
+  "outputDirectory": "apps/docs/.next",
+  
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
+  "build": {
+    "env": {
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/github",
+      "destination": "https://github.com/Arkit-k/Designers",
+      "permanent": false
+    },
+    {
+      "source": "/npm",
+      "destination": "https://www.npmjs.com/package/designers",
+      "permanent": false
+    }
+  ]
+}
