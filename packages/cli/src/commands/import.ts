@@ -247,7 +247,7 @@ async function installDependencies(libraryInfo: any): Promise<void> {
   }
   
   // Install Designers integration package
-  const integrationCmd = `${packageManager} ${packageManager === 'npm' ? 'install' : 'add'} @designers/integrations`;
+  const integrationCmd = `${packageManager} ${packageManager === 'npm' ? 'install' : 'add'} designers-integrations`;
   execSync(integrationCmd, { stdio: 'pipe' });
 }
 
@@ -311,14 +311,14 @@ function generateIndexFile(library: string, components: string[]): string {
 ${exports}
 
 // Re-export integration utilities
-export { useUIComponent, useUIComponents } from '@designers/integrations';
+export { useUIComponent, useUIComponents } from 'designers-integrations';
 `;
 }
 
 function generateComponentFile(library: string, component: string): string {
   return `// ${component} component integrated with Designers
 import React from 'react';
-import { useUIComponent } from '@designers/integrations';
+import { useUIComponent } from 'designers-integrations';
 
 export interface ${component}Props {
   variant?: string;
@@ -353,10 +353,10 @@ function generateProviderSetup(library: string, config: any, animationLibrary = 
 
   return `// UI Integration Provider
 import React from 'react';
-import { DesignSystemProvider } from '@designers/react';
-import { IntegrationProvider } from '@designers/integrations';
-import { ${library}Components, ${library}Adapter } from '@designers/integrations/${library}';
-import { AnimationProvider } from '@designers/animations';
+import { DesignSystemProvider } from 'designers-react';
+import { IntegrationProvider } from 'designers-integrations';
+import { ${library}Components, ${library}Adapter } from 'designers-integrations/${library}';
+import { AnimationProvider } from 'designers-animations';
 
 export function UIProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -378,10 +378,10 @@ export function UIProvider({ children }: { children: React.ReactNode }) {
 }
 
 // Export individual components for direct use
-export * from '@designers/integrations/${library}';
+export * from 'designers-integrations/${library}';
 
 // Export animation utilities
-export * from '@designers/animations';
+export * from 'designers-animations';
 `;
 }
 
@@ -389,7 +389,7 @@ function showUsageExample(library: string, component: string): void {
   console.log(chalk.cyan('\nUsage example:'));
   console.log(chalk.gray(`
 // 1. Wrap your app with providers
-import { DesignSystemProvider } from '@designers/react';
+import { DesignSystemProvider } from 'designers-react';
 import { UIProvider } from './providers/ui-provider';
 
 function App() {

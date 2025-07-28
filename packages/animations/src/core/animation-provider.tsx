@@ -3,7 +3,7 @@
  */
 
 import React, { createContext, useContext, ReactNode, useMemo, useEffect, useState } from 'react';
-import { useDesignTokens } from '@designers/react';
+import { useDesignTokens } from 'designers-react';
 import type { AnimationConfig, AnimationLibrary, AnimationPreset, AnimationContextValue } from '../types';
 import { AnimationRegistry } from './animation-registry';
 import { defaultAnimationConfig } from './animation-config';

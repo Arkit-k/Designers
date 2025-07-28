@@ -30,7 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "designers-core": "2.0.1",
+    "designers-core": "3.0.0",
     "commander": "^11.1.0",
     "inquirer": "^9.2.12",
     "chalk": "^5.3.0",

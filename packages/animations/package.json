@@ -45,7 +45,8 @@
     "access": "public"
   },
   "dependencies": {
-    "designers-core": "2.0.1"
+    "designers-core": "3.0.0",
+    "designers-react": "3.0.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
