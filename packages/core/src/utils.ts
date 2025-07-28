@@ -8,6 +8,7 @@ import { colors } from './tokens/colors';
 import { spacing } from './tokens/spacing';
 import { typography } from './tokens/typography';
 import { breakpoints } from './tokens/breakpoints';
+import { shadows, radius, transitions } from './tokens/effects';
 import type { Theme, ThemeConfig, ResponsiveValue } from './types';
 
 /**
@@ -25,19 +26,72 @@ import type { Theme, ThemeConfig, ResponsiveValue } from './types';
  * ```
  */
 export function createTheme(config: ThemeConfig): Theme {
+  // Create typography scale for the theme
+  const typographyScale = {
+    font: {
+      sans: typography.fontFamily.sans,
+      serif: typography.fontFamily.serif,
+      mono: typography.fontFamily.mono,
+    },
+    text: {
+      xs: typography.fontSize.xs,
+      sm: typography.fontSize.sm,
+      base: typography.fontSize.base,
+      lg: typography.fontSize.lg,
+      xl: typography.fontSize.xl,
+      '2xl': typography.fontSize['2xl'],
+      '3xl': typography.fontSize['3xl'],
+      '4xl': typography.fontSize['4xl'],
+      '5xl': typography.fontSize['5xl'],
+      '6xl': typography.fontSize['6xl'],
+      '7xl': typography.fontSize['7xl'],
+      '8xl': typography.fontSize['8xl'],
+      '9xl': typography.fontSize['9xl'],
+    },
+    weight: {
+      thin: typography.fontWeight.thin.toString(),
+      light: typography.fontWeight.light.toString(),
+      normal: typography.fontWeight.normal.toString(),
+      medium: typography.fontWeight.medium.toString(),
+      semibold: typography.fontWeight.semibold.toString(),
+      bold: typography.fontWeight.bold.toString(),
+      extrabold: typography.fontWeight.extrabold.toString(),
+      black: typography.fontWeight.black.toString(),
+    },
+    leading: {
+      none: typography.lineHeight.none.toString(),
+      tight: typography.lineHeight.tight.toString(),
+      snug: typography.lineHeight.snug.toString(),
+      normal: typography.lineHeight.normal.toString(),
+      relaxed: typography.lineHeight.relaxed.toString(),
+      loose: typography.lineHeight.loose.toString(),
+    },
+  };
+
+  // Create transitions scale that matches the expected interface
+  const transitionsScale = {
+    none: 'none',
+    all: 'all 150ms ease-in-out',
+    default: transitions.default,
+    colors: 'color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out',
+    opacity: 'opacity 150ms ease-in-out',
+    shadow: 'box-shadow 150ms ease-in-out',
+    transform: 'transform 150ms ease-in-out',
+  };
+
   return {
     name: 'custom',
     mode: 'light',
     colors: { ...colors, ...config.colors },
     spacing: { ...spacing, ...config.spacing },
-    typography: { ...typography, ...config.typography },
+    typography: { ...typographyScale, ...config.typography },
     breakpoints: { ...breakpoints, ...config.breakpoints },
-    shadows: {},
-    radius: {},
-    transitions: {},
+    shadows,
+    radius,
+    transitions: transitionsScale,
     space: spacing,
-    text: typography.text,
-    font: typography.font,
+    text: typographyScale.text,
+    font: typographyScale.font,
     responsive: () => ({}),
     alpha: () => '',
     stack: () => ({}),
@@ -109,8 +163,26 @@ export function generateTailwindConfig() {
           ])
         ),
         spacing,
-        fontFamily: typography.font,
-        fontSize: typography.text,
+        fontFamily: {
+          sans: typography.fontFamily.sans,
+          serif: typography.fontFamily.serif,
+          mono: typography.fontFamily.mono,
+        },
+        fontSize: {
+          xs: typography.fontSize.xs,
+          sm: typography.fontSize.sm,
+          base: typography.fontSize.base,
+          lg: typography.fontSize.lg,
+          xl: typography.fontSize.xl,
+          '2xl': typography.fontSize['2xl'],
+          '3xl': typography.fontSize['3xl'],
+          '4xl': typography.fontSize['4xl'],
+          '5xl': typography.fontSize['5xl'],
+          '6xl': typography.fontSize['6xl'],
+          '7xl': typography.fontSize['7xl'],
+          '8xl': typography.fontSize['8xl'],
+          '9xl': typography.fontSize['9xl'],
+        },
         screens: breakpoints,
       }
     }

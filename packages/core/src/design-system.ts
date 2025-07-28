@@ -29,19 +29,81 @@ import type { DesignTokens } from './types';
  * };
  * ```
  */
+// Create a typography scale that matches the expected TypographyScale interface
+const typographyScale = {
+  font: {
+    sans: typography.fontFamily.sans,
+    serif: typography.fontFamily.serif,
+    mono: typography.fontFamily.mono,
+  },
+  text: {
+    xs: typography.fontSize.xs,
+    sm: typography.fontSize.sm,
+    base: typography.fontSize.base,
+    lg: typography.fontSize.lg,
+    xl: typography.fontSize.xl,
+    '2xl': typography.fontSize['2xl'],
+    '3xl': typography.fontSize['3xl'],
+    '4xl': typography.fontSize['4xl'],
+    '5xl': typography.fontSize['5xl'],
+    '6xl': typography.fontSize['6xl'],
+    '7xl': typography.fontSize['7xl'],
+    '8xl': typography.fontSize['8xl'],
+    '9xl': typography.fontSize['9xl'],
+  },
+  weight: {
+    thin: typography.fontWeight.thin.toString(),
+    light: typography.fontWeight.light.toString(),
+    normal: typography.fontWeight.normal.toString(),
+    medium: typography.fontWeight.medium.toString(),
+    semibold: typography.fontWeight.semibold.toString(),
+    bold: typography.fontWeight.bold.toString(),
+    extrabold: typography.fontWeight.extrabold.toString(),
+    black: typography.fontWeight.black.toString(),
+  },
+  leading: {
+    none: typography.lineHeight.none.toString(),
+    tight: typography.lineHeight.tight.toString(),
+    snug: typography.lineHeight.snug.toString(),
+    normal: typography.lineHeight.normal.toString(),
+    relaxed: typography.lineHeight.relaxed.toString(),
+    loose: typography.lineHeight.loose.toString(),
+  },
+};
+
+// Create a simple breakpoints object that matches the expected Breakpoints interface
+const breakpointsScale = {
+  sm: breakpoints.sm.min,
+  md: breakpoints.md.min,
+  lg: breakpoints.lg.min,
+  xl: breakpoints.xl.min,
+  '2xl': breakpoints['2xl'].min,
+};
+
+// Create a transitions object that matches the expected Effects['transitions'] interface
+const transitionsScale = {
+  none: 'none',
+  all: 'all 150ms ease-in-out',
+  default: transitions.default,
+  colors: 'color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out',
+  opacity: 'opacity 150ms ease-in-out',
+  shadow: 'box-shadow 150ms ease-in-out',
+  transform: 'transform 150ms ease-in-out',
+};
+
 export const ds: DesignTokens = {
   colors,
   spacing,
-  typography,
-  breakpoints,
+  typography: typographyScale,
+  breakpoints: breakpointsScale,
   shadows,
   radius,
-  transitions,
-  
+  transitions: transitionsScale,
+
   // Semantic shortcuts that developers love
   space: spacing, // alias for spacing
-  text: typography.text, // quick access to text sizes
-  font: typography.font, // quick access to font families
+  text: typographyScale.text, // quick access to text sizes
+  font: typographyScale.font, // quick access to font families
   
   // Utility functions attached to the main object
   responsive: (values: Record<string, any>) => {
