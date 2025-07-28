@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { CodeBlock } from '@/components/code-block'
 import { FeatureCard } from '@/components/feature-card'
+import { Palette, Type, Layers, Package, Sparkles, Settings } from 'lucide-react'
 
 
 export const metadata: Metadata = {
@@ -12,37 +13,37 @@ const componentCategories = [
   {
     title: 'Design Tokens',
     description: 'Core design tokens including colors, typography, spacing, and more.',
-    icon: 'Palette',
+    icon: Palette,
     items: ['Colors', 'Typography', 'Spacing', 'Shadows', 'Border Radius', 'Breakpoints']
   },
   {
     title: 'Typography',
     description: 'Text styles, font families, and typographic scales.',
-    icon: 'Type',
+    icon: Type,
     items: ['Headings', 'Body Text', 'Captions', 'Code Text', 'Font Weights', 'Line Heights']
   },
   {
     title: 'Layout Components',
     description: 'Flexible layout components for building responsive interfaces.',
-    icon: 'Layers',
+    icon: Layers,
     items: ['Container', 'Grid', 'Flex', 'Stack', 'Spacer', 'Divider']
   },
   {
     title: 'UI Components',
     description: 'Ready-to-use UI components with consistent styling.',
-    icon: 'Package',
+    icon: Package,
     items: ['Button', 'Input', 'Card', 'Modal', 'Dropdown', 'Navigation']
   },
   {
     title: 'Animations',
     description: 'Pre-built animations and motion components.',
-    icon: 'Sparkles',
+    icon: Sparkles,
     items: ['Fade', 'Slide', 'Scale', 'Rotate', 'Bounce', 'Custom Transitions']
   },
   {
     title: 'Utilities',
     description: 'Utility functions and helper components.',
-    icon: 'Settings',
+    icon: Settings,
     items: ['Theme Provider', 'Responsive Utilities', 'Color Utilities', 'Type Guards']
   }
 ]
@@ -112,7 +113,7 @@ export default function ComponentsPage() {
                 key={category.title}
                 title={category.title}
                 description={category.description}
-                iconName={category.icon}
+                icon={category.icon}
                 className="h-full"
               >
                 <div className="mt-4">
