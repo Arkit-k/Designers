@@ -7,7 +7,6 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-<<<<<<< HEAD
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js"
@@ -31,31 +30,6 @@
       "types": "./dist/mantine.d.ts",
       "import": "./dist/mantine.esm.js",
       "require": "./dist/mantine.js"
-=======
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./shadcn": {
-      "import": "./dist/shadcn.esm.js",
-      "require": "./dist/shadcn.js",
-      "types": "./dist/shadcn.d.ts"
-    },
-    "./mui": {
-      "import": "./dist/mui.esm.js",
-      "require": "./dist/mui.js",
-      "types": "./dist/mui.d.ts"
-    },
-    "./chakra": {
-      "import": "./dist/chakra.esm.js",
-      "require": "./dist/chakra.js",
-      "types": "./dist/chakra.d.ts"
-    },
-    "./mantine": {
-      "import": "./dist/mantine.esm.js",
-      "require": "./dist/mantine.js",
-      "types": "./dist/mantine.d.ts"
->>>>>>> 9bd872856b02538a7e95ab9d5ef18ca582331b2c
     }
   },
   "files": [
@@ -83,13 +57,8 @@
     "access": "public"
   },
   "dependencies": {
-<<<<<<< HEAD
     "designers-core": "3.0.0",
     "designers-react": "3.0.0"
-=======
-    "designers-core": "2.0.1",
-    "designers-react": "2.0.1"
->>>>>>> 9bd872856b02538a7e95ab9d5ef18ca582331b2c
   },
   "peerDependencies": {
     "react": ">=18.0.0",
