@@ -2,10 +2,11 @@
   "version": 2,
   "name": "designers-docs",
   "framework": "nextjs",
-  "buildCommand": "turbo run build --filter=designers-docs",
-  "devCommand": "turbo run dev --filter=designers-docs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "outputDirectory": "apps/docs/.next",
+  "outputDirectory": ".next",
+  "rootDirectory": "apps/docs",
   
   "env": {
     "NODE_ENV": "production",

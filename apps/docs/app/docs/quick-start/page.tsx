@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Package, Code, Zap, ExternalLink } from "lucide-react";
-import FileText from "lucide-react/dist/esm/icons/file-text";
+import { ArrowRight, Package, Code, Zap, ExternalLink, FileText, Palette } from "lucide-react";
 import { CodeBlock } from "@/components/code-block";
-import Palette from "lucide-react/dist/esm/icons/palette";
 
 const quickStartCode = `# Get started in 30 seconds\nnpm install designers\n\n# Initialize your project\nnpx designers init\n\n# Start using design tokens immediately\nimport { ds } from 'designers';`;
 
@@ -123,8 +121,4 @@ export default function DocsQuickStartPage() {
   );
 }
 
-declare module "lucide-react/dist/esm/icons/palette" {
-  import * as React from "react";
-  const Palette: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement> & { color?: string; size?: string | number }>;
-  export default Palette;
-}
+

@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { CodeBlock } from "@/components/code-block";
-import { Code, Zap, ExternalLink } from "lucide-react";
-import FileText from "lucide-react/dist/esm/icons/file-text";
-import Palette from "lucide-react/dist/esm/icons/palette";
+import { Code, Zap, Palette } from "lucide-react";
 
 const typescriptCode = `import { ds, type DsTokens } from 'designers';
 
