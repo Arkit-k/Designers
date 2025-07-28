@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Package, Zap, Palette, Code, Sparkles, Github, ExternalLink } from 'lucide-react'
+import { ArrowRight, Github, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { CodeBlock } from '@/components/code-block'
 import { FeatureCard } from '@/components/feature-card'
@@ -19,32 +19,32 @@ npx designers init`
 
 const features = [
   {
-    icon: Package,
+    iconName: 'Package',
     title: 'Complete Package',
     description: 'Everything you need in one install - core tokens, React components, animations, and integrations.',
   },
   {
-    icon: Zap,
+    iconName: 'Zap',
     title: 'Lightning Fast',
     description: 'Optimized for performance with tree-shaking, minimal bundle size, and efficient rendering.',
   },
   {
-    icon: Palette,
+    iconName: 'Palette',
     title: 'Design Tokens',
     description: 'Comprehensive design system with colors, typography, spacing, and responsive breakpoints.',
   },
   {
-    icon: Code,
+    iconName: 'Code',
     title: 'Developer Experience',
     description: 'Full TypeScript support, excellent IntelliSense, and comprehensive documentation.',
   },
   {
-    icon: Sparkles,
+    iconName: 'Sparkles',
     title: 'Animations',
     description: 'Built-in support for Framer Motion and GSAP with pre-configured animation presets.',
   },
   {
-    icon: ExternalLink,
+    iconName: 'ExternalLink',
     title: 'UI Integrations',
     description: 'Seamless integration with shadcn/ui, Material-UI, Chakra UI, and Mantine.',
   },

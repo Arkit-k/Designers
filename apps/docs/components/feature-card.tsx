@@ -1,20 +1,32 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { LucideIcon } from 'lucide-react'
+import { LucideIcon, Palette, Type, Layers, Package, Sparkles, Settings, Zap, Code, ExternalLink } from 'lucide-react'
 import { ReactNode } from 'react'
 
-
 interface FeatureCardProps {
-  icon: LucideIcon
+  iconName?: string
+  icon?: LucideIcon
   title: string
   description: string
   children?: ReactNode
   className?: string
 }
 
+const iconMap: Record<string, LucideIcon> = {
+  Palette,
+  Type,
+  Layers,
+  Package,
+  Sparkles,
+  Settings,
+  Zap,
+  Code,
+  ExternalLink,
+}
 
-export function FeatureCard({ icon: Icon, title, description, children, className = '' }: FeatureCardProps) {
+export function FeatureCard({ iconName, icon, title, description, children, className = '' }: FeatureCardProps) {
+  const Icon = icon || (iconName ? iconMap[iconName] : null) || Palette;
   return (
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}

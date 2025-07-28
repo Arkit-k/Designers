@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import { CodeBlock } from '@/components/code-block'
 import { FeatureCard } from '@/components/feature-card'
-import { Palette, Type, Layers, Package, Sparkles, Settings } from 'lucide-react'
 
 
 export const metadata: Metadata = {
@@ -13,37 +12,37 @@ const componentCategories = [
   {
     title: 'Design Tokens',
     description: 'Core design tokens including colors, typography, spacing, and more.',
-    icon: Palette,
+    iconName: 'Palette',
     items: ['Colors', 'Typography', 'Spacing', 'Shadows', 'Border Radius', 'Breakpoints']
   },
   {
     title: 'Typography',
     description: 'Text styles, font families, and typographic scales.',
-    icon: Type,
+    iconName: 'Type',
     items: ['Headings', 'Body Text', 'Captions', 'Code Text', 'Font Weights', 'Line Heights']
   },
   {
     title: 'Layout Components',
     description: 'Flexible layout components for building responsive interfaces.',
-    icon: Layers,
+    iconName: 'Layers',
     items: ['Container', 'Grid', 'Flex', 'Stack', 'Spacer', 'Divider']
   },
   {
     title: 'UI Components',
     description: 'Ready-to-use UI components with consistent styling.',
-    icon: Package,
+    iconName: 'Package',
     items: ['Button', 'Input', 'Card', 'Modal', 'Dropdown', 'Navigation']
   },
   {
     title: 'Animations',
     description: 'Pre-built animations and motion components.',
-    icon: Sparkles,
+    iconName: 'Sparkles',
     items: ['Fade', 'Slide', 'Scale', 'Rotate', 'Bounce', 'Custom Transitions']
   },
   {
     title: 'Utilities',
     description: 'Utility functions and helper components.',
-    icon: Settings,
+    iconName: 'Settings',
     items: ['Theme Provider', 'Responsive Utilities', 'Color Utilities', 'Type Guards']
   }
 ]
@@ -113,7 +112,7 @@ export default function ComponentsPage() {
                 key={category.title}
                 title={category.title}
                 description={category.description}
-                icon={category.icon}
+                iconName={category.iconName}
                 className="h-full"
               >
                 <div className="mt-4">
