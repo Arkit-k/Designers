@@ -42,31 +42,7 @@ const colors = {
   blue: { 50: '#eff6ff', 500: '#3b82f6', 900: '#1e3a8a' },
   green: { 50: '#f0fdf4', 500: '#22c55e', 900: '#14532d' },
   red: { 50: '#fef2f2', 500: '#ef4444', 900: '#7f1d1d' }
-};`,
-    component: () => (
-      <div className="space-y-4">
-        {[
-          { name: 'Blue', colors: { 50: '#eff6ff', 500: '#3b82f6', 900: '#1e3a8a' } },
-          { name: 'Green', colors: { 50: '#f0fdf4', 500: '#22c55e', 900: '#14532d' } },
-          { name: 'Red', colors: { 50: '#fef2f2', 500: '#ef4444', 900: '#7f1d1d' } }
-        ].map(({ name, colors }) => (
-          <div key={name} className="space-y-2">
-            <h4 className="text-sm font-medium">{name}</h4>
-            <div className="flex gap-2">
-              {Object.entries(colors).map(([shade, color]) => (
-                <div
-                  key={shade}
-                  className="w-16 h-16 rounded-lg flex items-end p-2 text-xs font-mono"
-                  style={{ backgroundColor: color, color: shade === '50' ? '#000' : '#fff' }}
-                >
-                  {shade}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    )
+};`
   },
   {
     name: 'Typography Scale',
@@ -82,17 +58,7 @@ const typography = {
     xl: '1.25rem',
     '2xl': '1.5rem'
   }
-};`,
-    component: () => (
-      <div className="space-y-3">
-        <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>2xl - Heading</div>
-        <div style={{ fontSize: '1.25rem', fontWeight: '600' }}>xl - Subheading</div>
-        <div style={{ fontSize: '1.125rem' }}>lg - Large text</div>
-        <div style={{ fontSize: '1rem' }}>base - Body text</div>
-        <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>sm - Small text</div>
-        <div style={{ fontSize: '0.75rem', color: '#9ca3af' }}>xs - Caption</div>
-      </div>
-    )
+};`
   },
   {
     name: 'Interactive Button',
@@ -115,76 +81,7 @@ function Button({ children, onClick, disabled }) {
       {children}
     </button>
   );
-}`,
-    component: () => {
-      const [clicked, setClicked] = useState(false);
-
-      return (
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <button
-              onClick={() => setClicked(!clicked)}
-              style={{
-                padding: '0.5rem 1rem',
-                borderRadius: '0.375rem',
-                border: 'none',
-                backgroundColor: '#3b82f6',
-                color: 'white',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                transform: clicked ? 'scale(0.95)' : 'scale(1)'
-              }}
-              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#2563eb'}
-              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#3b82f6'}
-            >
-              Primary Button
-            </button>
-
-            <button
-              style={{
-                padding: '0.5rem 1rem',
-                borderRadius: '0.375rem',
-                border: '1px solid #d1d5db',
-                backgroundColor: 'white',
-                color: '#374151',
-                cursor: 'pointer',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f9fafb'}
-              onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = 'white'}
-            >
-              Secondary
-            </button>
-
-            <button
-              disabled
-              style={{
-                padding: '0.5rem 1rem',
-                borderRadius: '0.375rem',
-                border: 'none',
-                backgroundColor: '#e5e7eb',
-                color: '#9ca3af',
-                cursor: 'not-allowed'
-              }}
-            >
-              Disabled
-            </button>
-          </div>
-
-          {clicked && (
-            <div style={{
-              padding: '0.75rem',
-              backgroundColor: '#dcfce7',
-              borderRadius: '0.375rem',
-              color: '#166534',
-              fontSize: '0.875rem'
-            }}>
-              ✅ Button clicked! State management working.
-            </div>
-          )}
-        </div>
-      );
-    }
+}`
   }
 ]
 
@@ -318,7 +215,13 @@ export default function PlaygroundPage() {
 
               <div className="h-full min-h-[400px] border rounded-lg bg-white dark:bg-gray-950 p-6">
                 <div className="h-full">
-                  {selectedExample.component()}
+                  <div className="flex items-center justify-center h-full text-muted-foreground">
+                    <div className="text-center">
+                      <Code className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                      <p>Live preview not available for this example</p>
+                      <p className="text-sm mt-2">Check the code tab to see the implementation</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
