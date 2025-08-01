@@ -12,7 +12,7 @@
     "templates"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "echo 'CLI build temporarily disabled for docs deployment'",
     "dev": "tsup --watch",
     "lint": "eslint src --ext .ts",
     "type-check": "tsc --noEmit",

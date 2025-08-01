@@ -17,7 +17,7 @@ export { colors } from './tokens/colors';
 export { spacing } from './tokens/spacing';
 export { typography } from './tokens/typography';
 export { breakpoints } from './tokens/breakpoints';
-export { shadows, radius, transitions } from './tokens/effects';
+export { shadows, radius, transitions, opacity, borderRadius } from './tokens/effects';
 
 // Utilities that developers actually use
 export {
