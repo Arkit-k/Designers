@@ -5,12 +5,12 @@ export default defineConfig([
   {
     entry: ['src/index.ts'],
     format: ['cjs'],
-    dts: false,
+    dts: true,
     splitting: false,
     sourcemap: true,
     clean: true,
     minify: false,
-    external: [],
+    external: ['designers-core', 'commander', 'inquirer', 'chalk', 'ora', 'fs-extra', 'handlebars', 'prettier'],
     treeshake: true,
     outDir: 'dist',
   },
@@ -23,7 +23,7 @@ export default defineConfig([
     sourcemap: true,
     clean: false,
     minify: false,
-    external: [],
+    external: ['designers-core', 'commander', 'inquirer', 'chalk', 'ora', 'fs-extra', 'handlebars', 'prettier'],
     treeshake: true,
     outDir: 'dist',
     banner: {

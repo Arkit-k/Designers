@@ -8,14 +8,17 @@ import chalk from 'chalk';
 import ora from 'ora';
 import prettier from 'prettier';
 import {
-  colorThemes,
+  colors,
   typography,
   spacing,
   shadows,
-  borderRadius,
-  opacity,
+  radius,
   breakpoints,
-  type ColorTheme
+  opacity,
+  borderRadius,
+  themeModeConfigs,
+  type Theme,
+  type ThemeModeConfig
 } from '@designers/core';
 import { generateTailwindConfig, setupTailwindIntegration } from '../integrations/tailwind';
 import { loadConfig } from '../utils/config-loader';
@@ -134,8 +137,8 @@ async function exportTailwindFromConfig(options: ExportOptions) {
   });
 }
 
-function generateCSSVariables(theme: ColorTheme, prefix: string): string {
-  const themeData = colorThemes[theme];
+function generateCSSVariables(theme: string, prefix: string): string {
+  const themeData = theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark;
   const vars: string[] = [];
   
   // Helper to flatten nested objects
@@ -178,8 +181,8 @@ function generateCSSVariables(theme: ColorTheme, prefix: string): string {
   return `:root {\n${vars.join('\n')}\n}\n`;
 }
 
-function generateSCSSVariables(theme: ColorTheme, prefix: string): string {
-  const themeData = colorThemes[theme];
+function generateSCSSVariables(theme: string, prefix: string): string {
+  const themeData = theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark;
   const vars: string[] = [];
   
   // Helper to flatten nested objects
@@ -206,7 +209,7 @@ function generateSCSSVariables(theme: ColorTheme, prefix: string): string {
 }
 
 function generateJSTokens(theme: string, prefix: string): string {
-  const themes = theme === 'all' ? { light: colorThemes.light, dark: colorThemes.dark } : { [theme]: colorThemes[theme as ColorTheme] };
+  const themes = theme === 'all' ? { light: themeModeConfigs.light, dark: themeModeConfigs.dark } : { [theme]: theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark };
   
   return `// Generated design tokens
 export const tokens = ${JSON.stringify({
@@ -224,10 +227,10 @@ export default tokens;
 }
 
 function generateTSTokens(theme: string, prefix: string): string {
-  const themes = theme === 'all' ? { light: colorThemes.light, dark: colorThemes.dark } : { [theme]: colorThemes[theme as ColorTheme] };
-  
+  const themes = theme === 'all' ? { light: themeModeConfigs.light, dark: themeModeConfigs.dark } : { [theme]: theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark };
+
   return `// Generated design tokens
-import type { ColorTheme } from '@designers/core';
+import type { ThemeModeConfig } from '@designers/core';
 
 export interface DesignTokens {
   themes: Record<string, any>;
@@ -254,7 +257,7 @@ export default tokens;
 }
 
 function generateJSONTokens(theme: string) {
-  const themes = theme === 'all' ? { light: colorThemes.light, dark: colorThemes.dark } : { [theme]: colorThemes[theme as ColorTheme] };
+  const themes = theme === 'all' ? { light: themeModeConfigs.light, dark: themeModeConfigs.dark } : { [theme]: theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark };
   
   return {
     themes,
@@ -268,13 +271,13 @@ function generateJSONTokens(theme: string) {
 }
 
 function generateTailwindConfig(theme: string): string {
-  const themeData = theme === 'all' ? colorThemes.light : colorThemes[theme as ColorTheme];
-  
+  const themeData = theme === 'all' ? themeModeConfigs.light : (theme === 'light' ? themeModeConfigs.light : themeModeConfigs.dark);
+
   return `// Generated Tailwind config for Designers tokens
 module.exports = {
   theme: {
     extend: {
-      colors: ${JSON.stringify(themeData.colors, null, 6)},
+      colors: ${JSON.stringify(colors, null, 6)},
       spacing: ${JSON.stringify(spacing, null, 6)},
       fontSize: ${JSON.stringify(typography.fontSize, null, 6)},
       fontFamily: ${JSON.stringify(typography.fontFamily, null, 6)},

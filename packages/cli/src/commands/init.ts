@@ -211,6 +211,3 @@ export function ExampleComponent() {
     await fs.writeFile('./src/styles/globals.css', tailwindCSS);
   }
 }
-
-
-}

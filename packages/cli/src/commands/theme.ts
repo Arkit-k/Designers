@@ -7,7 +7,7 @@ import path from 'path';
 import chalk from 'chalk';
 import ora from 'ora';
 import inquirer from 'inquirer';
-import { colorThemes } from '@designers/core';
+import { colors, createTheme } from '@designers/core';
 
 interface ThemeOptions {
   list?: boolean;
