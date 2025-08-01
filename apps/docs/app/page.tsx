@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Sparkles } from 'lucide-react'
 import Link from 'next/link'
+import { CodeBlock } from '@/components/code-block'
 
 const installCode = `npm install designers`
 

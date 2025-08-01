@@ -8,6 +8,7 @@ import { Footer } from '../components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://designers-docs.vercel.app'),
   title: 'Designers - Complete Design System for React',
   description: 'A lightweight, headless design system for React applications with automatic Tailwind CSS integration, animations, and UI library support.',
   keywords: ['design system', 'react', 'typescript', 'tailwind', 'ui components', 'headless'],
