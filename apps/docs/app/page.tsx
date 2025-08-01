@@ -3,9 +3,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { CodeBlock } from '@/components/code-block'
-import { FeatureCard } from '@/components/feature-card'
-import { StatsSection } from '@/components/stats-section'
 
 const installCode = `npm install designers`
 
@@ -140,8 +137,8 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 1.0 }}
               className="mx-auto max-w-2xl"
             >
-              <div className="glass-card p-1">
-                <CodeBlock code={installCode} language="bash" />
+              <div className="glass-card p-4">
+                <pre className="text-sm"><code>{installCode}</code></pre>
               </div>
             </motion.div>
           </motion.div>
@@ -149,7 +146,13 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <StatsSection />
+      <section className="py-16 border-y border-border bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold">Trusted by developers</h2>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-24 sm:py-32">
@@ -178,7 +181,10 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <FeatureCard {...feature} />
+                <div className="glass-card p-6">
+                  <h3 className="font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>

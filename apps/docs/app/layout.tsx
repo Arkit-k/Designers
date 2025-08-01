@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Designers',
     images: [
       {
-        url: '/og-image.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Designers Design System',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Designers - Complete Design System for React',
     description: 'A lightweight, headless design system for React applications',
-    images: ['/og-image.png'],
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
