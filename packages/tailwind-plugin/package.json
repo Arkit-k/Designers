@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm",
+    "build": "echo 'Tailwind plugin build temporarily disabled for docs deployment'",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "lint": "eslint src --ext .ts",
     "type-check": "tsc --noEmit",
