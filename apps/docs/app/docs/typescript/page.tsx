@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { CodeBlock } from "@/components/code-block";
+import { CodeBlock } from "../../../components/code-block";
 import { Code, Zap, Palette } from "lucide-react";
 
 const typescriptCode = `import { ds, type DsTokens } from 'designers';

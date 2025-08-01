@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Package, Code, Zap, ExternalLink, FileText, Palette } from "lucide-react";
-import { CodeBlock } from "@/components/code-block";
+import { CodeBlock } from "../../../components/code-block";
 
 const quickStartCode = `# Get started in 30 seconds\nnpm install designers\n\n# Initialize your project\nnpx designers init\n\n# Start using design tokens immediately\nimport { ds } from 'designers';`;
 

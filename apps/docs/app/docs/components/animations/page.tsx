@@ -1,4 +1,4 @@
-import { CodeBlock } from '@/components/code-block'
+import { CodeBlock } from '../../../../components/code-block'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

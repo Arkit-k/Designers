@@ -11,7 +11,7 @@ import {
   Search,
   Sparkles
 } from 'lucide-react'
-import { Logo } from '@/components/logo'
+import { Logo } from '../components/logo'
 
 const quickLinks = [
   {
