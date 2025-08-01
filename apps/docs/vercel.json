@@ -2,9 +2,9 @@
   "version": 2,
   "name": "designers-documentation",
   "framework": "nextjs",
-  "buildCommand": "npm run build",
+  "buildCommand": "cd ../.. && npm run build --filter=designers-docs",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "cd ../.. && npm install",
   "outputDirectory": ".next",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
@@ -13,12 +13,6 @@
   "build": {
     "env": {
       "NEXT_TELEMETRY_DISABLED": "1"
-    }
-  },
-  "functions": {
-    "app/**/*.tsx": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 30
     }
   },
   "headers": [
