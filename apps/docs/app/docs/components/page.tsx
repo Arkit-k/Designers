@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import { CodeBlock } from '@/components/code-block'
-import { FeatureCard } from '@/components/feature-card'
+import { CodeBlock } from '../../../components/code-block'
+import { FeatureCard } from '../../../components/feature-card'
 
 
 export const metadata: Metadata = {

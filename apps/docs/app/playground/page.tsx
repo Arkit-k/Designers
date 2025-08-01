@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { CodeBlock } from '@/components/code-block'
+import { CodeBlock } from '../../components/code-block'
 import {
   Play,
   Code,

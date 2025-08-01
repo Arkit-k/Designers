@@ -191,7 +191,7 @@ npm install designers-integrations
 }
 
 // Use shadcn components with design tokens
-import { Button } from "@/components/ui/button"
+// import { Button } from "../../../components/ui/button" // Commented out - component doesn't exist
 import { useDesigners } from 'designers/react'
 
 function IntegratedComponent() {

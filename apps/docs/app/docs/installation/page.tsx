@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Terminal, CheckCircle, AlertCircle } from 'lucide-react'
-import { CodeBlock } from '@/components/code-block'
+import { CodeBlock } from '../../../components/code-block'
 
 const installCommands = {
   npm: 'npm install designers',

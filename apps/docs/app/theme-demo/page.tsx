@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Palette, Sun, Moon, Monitor } from 'lucide-react'
-import { useThemeMode } from '@/components/theme-provider'
-import { ThemeModeSelector } from '@/components/theme-mode-selector'
+import { useThemeMode } from '../../components/theme-provider'
+import { ThemeModeSelector } from '../../components/theme-mode-selector'
 
 export default function ThemeDemoPage() {
   const { themeMode } = useThemeMode()
