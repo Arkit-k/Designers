@@ -2,9 +2,9 @@
   "version": 2,
   "name": "designers-documentation",
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && npm run build --filter=designers-docs",
+  "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "cd ../.. && npm install",
+  "installCommand": "npm install",
   "outputDirectory": ".next",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
