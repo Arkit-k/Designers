@@ -1,7 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { cn } from '../lib/utils'
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 interface LogoProps {
   className?: string
