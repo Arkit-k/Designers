@@ -1,0 +1,9 @@
+packages/
+examples/
+.turbo/
+node_modules/
+*.log
+.env*
+.next/
+dist/
+build/
