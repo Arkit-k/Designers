@@ -7,7 +7,6 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "designers-docs#build": {
-      "dependsOn": ["designers-core#build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "designers-cli#build": {
